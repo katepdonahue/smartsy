@@ -45,6 +45,10 @@ group :development, :test do
   gem 'launchy'
 end
 
+group :development do
+  gem 'nokogiri'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
