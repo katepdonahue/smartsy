@@ -1,10 +1,10 @@
 
 Given(/^I am on the game play page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit game_path
 end
 
 When(/^I enter a guess "(.*?)" for the artwork with id "(.*?)"$/) do |artist, art_id|
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content()
 end
 
 Then(/^I should get a point$/) do
