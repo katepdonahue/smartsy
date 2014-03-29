@@ -1,10 +1,12 @@
-show
+
 <ul>
   <% @artworks.each do |artwork| %>
     <li>
       <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
-      <%= artwork.title %>
-      <%= artwork.artist.name %>
+      <div>
+        <%= artwork.title %>
+        <%= artwork.artist.name %>
+      </div>
     </li>
   <% end %>
   
