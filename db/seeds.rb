@@ -8,3 +8,11 @@
 
 
 Scraper.new("bauhaus").grab_pages
+Scraper.new("art-nouveau").grab_pages
+Scraper.new("post-war-american-art").grab_pages
+Scraper.new("post-war-european-art").grab_pages
+Scraper.new("renaissance").grab_pages
+# Scraper.new("arts-of-africa-oceania-and-the-americas").grab_pages # figure out why this one doesn't work later
+Scraper.new("minimalism").grab_pages
+Scraper.new("impressionism").grab_pages
+
