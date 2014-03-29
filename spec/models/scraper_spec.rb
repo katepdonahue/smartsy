@@ -21,7 +21,7 @@ describe Scraper do
     it "should save the correct data to an artist and artwork object" do
       bauhaus_scraper = Scraper.new("bauhaus")
       data = bauhaus_scraper.open_page("1")
-      expect(bauhaus_scraper.parse_data(data).class).to eq(Artwork)
+      expect(bauhaus_scraper.parse_data(data)).to eq(Artwork.find(1))
     end
   end
 
