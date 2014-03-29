@@ -39,6 +39,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'pry'
+  gem 'nokogiri'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'faker'
   gem 'capybara'
@@ -46,7 +47,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'nokogiri'
+  gem 'httparty'
 end
 
 # Use ActiveModel has_secure_password
