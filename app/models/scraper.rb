@@ -22,4 +22,8 @@ class Scraper
     HTTParty.get("#{api}#{num}", :headers => HEADERS)
   end
 
+  def parse_data(data)
+
+  end
+
 end

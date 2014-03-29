@@ -11,16 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328180827) do
+ActiveRecord::Schema.define(version: 20140329181843) do
 
   create_table "artists", force: true do |t|
     t.string "name"
   end
 
   create_table "artworks", force: true do |t|
-    t.string  "image_name"
     t.string  "title"
-    t.integer "year",       limit: 255
+    t.integer "year",      limit: 255
     t.string  "gallery"
     t.integer "artist_id"
     t.string  "category"
