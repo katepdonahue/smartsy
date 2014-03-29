@@ -24,8 +24,11 @@ class Scraper
   end
 
   def parse_data(data)
-    artist = Artist.new
-    artist.name = data[0]["artist"]["name"]
+    artist = Artist.find_by(:name => data[0]["artist"]["name"])
+    if !artist
+      artist = Artist.new
+      artist.name = data[0]["artist"]["name"]
+    end
     artist.save
     artwork = Artwork.new
     artwork.title = data[0]["title"]
