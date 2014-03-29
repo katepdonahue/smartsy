@@ -24,7 +24,6 @@ class Scraper
   end
 
   def parse_data(data)
-    binding.pry
     artist = Artist.new
     artist.name = data[0]["artist"]["name"]
     artist.save
@@ -35,6 +34,8 @@ class Scraper
     artwork.artist_id = artist.id
     artwork.category = self.gene
     artwork.image_id = data[0]["images"][0]["id"]
+    artwork.save
+    artwork
   end
 
 

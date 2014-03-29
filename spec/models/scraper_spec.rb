@@ -6,7 +6,7 @@ describe Scraper do
     it "should grab all the photos and save them in the database" do
       bauhaus_scraper = Scraper.new("bauhaus")
       bauhaus_scraper.grab_pages
-      expect(Artwork.find_by(:title => "Gasse")).not_to be_nil
+      expect(Artwork.find_by(:title => "Study for Homage to the square: Absorption")).not_to be_nil
     end
   end
 
@@ -17,5 +17,12 @@ describe Scraper do
     end
   end
 
+  describe "#parse_data" do
+    it "should save the correct data to an artist and artwork object" do
+      bauhaus_scraper = Scraper.new("bauhaus")
+      data = bauhaus_scraper.open_page("1")
+      expect(bauhaus_scraper.parse_data(data).class).to eq(Artwork)
+    end
+  end
 
 end
