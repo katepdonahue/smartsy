@@ -14,4 +14,5 @@ edit page
     
   </ul>
   <button value="Sumbmit">
+  <%= hidden_field_tag(request_forgery_protection_token.to_s, form_authenticity_token) %>
 </form>
