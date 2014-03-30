@@ -13,7 +13,6 @@ class GameController < ApplicationController
   end
 
   def update
-    binding.pry
     @score = 0
     @artworks = Artwork.where(:category => params[:gene])
   end

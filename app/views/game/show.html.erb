@@ -1,13 +1,13 @@
 
-<ul>
+<div class="wrapper">
   <% @artworks.each do |artwork| %>
-    <li>
+    <div class="artwork">
       <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
       <div class="info">
         <p><%= artwork.title %></p>
         <p><%= artwork.artist.name %></p>
       </div>
-    </li>
+    </div>
   <% end %>
   
-</ul>
+</div>
