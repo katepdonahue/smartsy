@@ -1,5 +1,5 @@
 Given(/^I am on the game page$/) do
-  visit game_path
+  visit 'games/bauhaus/play'
 end
 
 Then(/^the game play page should show the images$/) do
