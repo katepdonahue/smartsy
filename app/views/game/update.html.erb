@@ -1,4 +1,4 @@
-@score
+<% score = 0 %>
 
 <ul>
   <% @artworks.each do |artwork| %>
@@ -8,8 +8,13 @@
         <%= artwork.title %>
         <%= artwork.artist.name %>
         <p>Your guess was: <%= params["#{artwork.id}"]["#{artwork.artist_id}"] %></p>
+        <% if artwork.artist.name == params["#{artwork.id}"]["#{artwork.artist_id}"] %>
+          <% score += 1 %>
+        <% end %>
       </div>
     </li>
   <% end %>
   
 </ul>
+
+<%= score %>
