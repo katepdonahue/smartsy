@@ -6,8 +6,8 @@ edit page
         <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
         <div>
           <%= artwork.title %>
-          <label for="Artist-<%= artwork.artist.id %>">Artist Name: </label>
-          <input id="Artist-<%= artwork.artist.id %>" type="text" name="<%= artwork.artist.id %>">
+          <label for="Artwork-<%= artwork.id %>">Artist Name: </label>
+          <input id="Artwork-<%= artwork.id %>" type="text" name="<%= artwork.id %>[<%= artwork.artist.id %>]">
         </div>
       </li>
     <% end %>
