@@ -7,8 +7,8 @@
       <div class="info">
         <p><%= artwork.title %></p>
         <p>Artist: <%= artwork.artist.name %></p>
-        <p>Your guess was: <%= params["#{artwork.id}"]["#{artwork.artist_id}"] %></p>
-        <% if artwork.artist.name == params["#{artwork.id}"]["#{artwork.artist_id}"] %>
+        <p>Your guess was: <%= params["#{artwork.id}"] %></p>
+        <% if artwork.artist.name == params["#{artwork.id}"] %>
           <% score += 1 %>
         <% end %>
       </div>
