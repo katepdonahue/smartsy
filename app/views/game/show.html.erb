@@ -3,9 +3,9 @@
   <% @artworks.each do |artwork| %>
     <li>
       <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
-      <div>
-        <%= artwork.title %>
-        <%= artwork.artist.name %>
+      <div class="info">
+        <p><%= artwork.title %></p>
+        <p><%= artwork.artist.name %></p>
       </div>
     </li>
   <% end %>

@@ -1,18 +1,20 @@
-edit page
+
 <form action="/games/<%= @artworks.first.category%>" method="POST">
   <ul>
     <% @artworks.each do |artwork| %>
       <li>
         <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
-        <div>
-          <%= artwork.title %>
-          <label for="Artwork-<%= artwork.id %>">Artist Name: </label>
-          <input id="Artwork-<%= artwork.id %>" type="text" name="<%= artwork.id %>[<%= artwork.artist.id %>]">
+        <div class="info">
+          <p><%= artwork.title %></p>
+          <p>
+            <label for="Artwork-<%= artwork.id %>">Artist Name: </label>
+            <input id="Artwork-<%= artwork.id %>" type="text" name="<%= artwork.id %>[<%= artwork.artist.id %>]">
+          </p>
         </div>
       </li>
     <% end %>
     
   </ul>
-  <button value="Sumbmit">
+  <button value="Sumbmit">Submit</button>
   <%= hidden_field_tag(request_forgery_protection_token.to_s, form_authenticity_token) %>
 </form>

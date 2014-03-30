@@ -4,9 +4,9 @@
   <% @artworks.each do |artwork| %>
     <li>
       <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
-      <div>
-        <%= artwork.title %>
-        <%= artwork.artist.name %>
+      <div class="info">
+        <p><%= artwork.title %></p>
+        <p>Artist: <%= artwork.artist.name %></p>
         <p>Your guess was: <%= params["#{artwork.id}"]["#{artwork.artist_id}"] %></p>
         <% if artwork.artist.name == params["#{artwork.id}"]["#{artwork.artist_id}"] %>
           <% score += 1 %>
