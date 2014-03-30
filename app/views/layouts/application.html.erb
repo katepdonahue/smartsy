@@ -2,13 +2,18 @@
 <html>
 <head>
   <title>Smartsy</title>
+  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <h1>SMARTSY</h1>
+    <h2>GUESS THE ARTIST</h2>
+  </header>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

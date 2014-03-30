@@ -2,10 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-li {
-  list-style-type: none;
+body {
+  font-family: 'Hammersmith One', sans-serif;
 }
 
-ul {
-  display: inline;
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 23px;
+  margin-top: -50px;
+}
+
+header {
+  margin: 5%;
+}
+
+.wrapper {
+  margin: 5%;
+}
+
+.artwork {
+  float: left;
+  margin: 2%;
+}
+
+.info {
+  width: 260px;
+}
+
+input {
+  border: 1px black solid;
+}
+
+button {
+  background-color: white;
+  font-family: 'Hammersmith One', sans-serif;
+  border: 1px black solid;
+  font-size: 23px;
 }
