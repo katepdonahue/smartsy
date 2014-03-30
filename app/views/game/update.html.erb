@@ -7,7 +7,7 @@
       <div>
         <%= artwork.title %>
         <%= artwork.artist.name %>
-        <p>Your guess was: <%= params[artwork.artist_id] %></p>
+        <p>Your guess was: <%= params["#{artwork.id}"]["#{artwork.artist_id}"] %></p>
       </div>
     </li>
   <% end %>
