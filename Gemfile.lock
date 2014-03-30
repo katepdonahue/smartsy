@@ -180,6 +180,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   httparty
+  i18n
   jbuilder (~> 1.2)
   jquery-rails
   launchy
