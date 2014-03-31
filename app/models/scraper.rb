@@ -1,4 +1,3 @@
-require 'HTTParty'
 
 class Scraper
   attr_reader :gene, :api, :image_cap
