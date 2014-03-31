@@ -23,6 +23,15 @@
     </div>
   </nav>
   <div class="example_img">
-    <img class="bauhaus" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/504e6558c2fea000020008b2/large.jpg">
+    <img class="bauhaus hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/504e6558c2fea000020008b2/large.jpg">
   </div>
 </div>
+<script type="text/javascript">
+  $(".button").on("mouseover", function() {
+    var $this = $(this);
+    var image_class = $this.attr("class").split(" ")[1];
+    $(".example_img").find(".visible").removeClass("visible").addClass("hidden").fadeOut();
+    $(".example_img").find("." + image_class).removeClass("hidden").addClass("visible").fadeIn();
+  });
+
+</script>
