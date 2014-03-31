@@ -44,7 +44,7 @@ class Scraper
   def clean_img(image_id)
     response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{image_id}/tall.jpg")
     i = 0
-    while response["Error"]
+    while response["Error"] || i > 10
       i += 1
       response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{image_id}/#{i}/tall.jpg")
     end
