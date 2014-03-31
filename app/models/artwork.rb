@@ -17,15 +17,15 @@ class Artwork < ActiveRecord::Base
     end
   end
 
-  def clean_img(gene)
-    response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/tall.jpg")
+  def clean_img
+    response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{self.image_id}/tall.jpg")
     i = 0
     while response["Error"] || i > 5
       i += 1
-      response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/#{i}/tall.jpg")
+      response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{self.image_id}/#{i}/tall.jpg")
     end
-    art_obj.image_id = "#{image_id}/#{i}" if i > 0
-    art_obj.save
+    self.image_id = "#{image_id}/#{i}" if i > 0
+    self.save
   end
 
 end
