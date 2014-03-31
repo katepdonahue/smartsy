@@ -7,7 +7,7 @@ class Artwork < ActiveRecord::Base
       if art_obj.class == Artwork
         response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/tall.jpg")
         i = 0
-        while response["Error"] || i > 5
+        while response["Error"] && i < 6
           i += 1
           response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/#{i}/tall.jpg")
         end
