@@ -11,7 +11,7 @@ class Artwork < ActiveRecord::Base
           i += 1
           response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/#{i}/tall.jpg")
         end
-        art_obj.image_id = "#{image_id}/#{i}" if i > 0
+        art_obj.image_id = "#{art_obj.image_id}/#{i}" if i > 0
         art_obj.save
       end
     end
@@ -24,7 +24,7 @@ class Artwork < ActiveRecord::Base
       i += 1
       response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{self.image_id}/#{i}/tall.jpg")
     end
-    self.image_id = "#{image_id}/#{i}" if i > 0
+    self.image_id = "#{self.image_id}/#{i}" if i > 0
     self.save
   end
 
