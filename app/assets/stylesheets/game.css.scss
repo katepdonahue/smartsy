@@ -36,9 +36,33 @@ input {
   border: 1px black solid;
 }
 
-button {
+button, .button {
   background-color: white;
   font-family: 'Hammersmith One', sans-serif;
   border: 1px black solid;
   font-size: 23px;
+}
+
+.button {
+  border: 1px black solid;
+  display: inline;
+  font-size: 18px;
+}
+
+
+a {
+  text-decoration: none;
+  padding: 5px;
+  color: black;
+  &:hover {
+    color: gray;
+  }
+}
+
+nav {
+  width: 100%;
+}
+
+.example_img img {
+  width: 100%;
 }
