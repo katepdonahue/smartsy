@@ -32,11 +32,11 @@ broken2.delete
 
 # if images don't get filled and you need to add more per category
 # run the following for however many you need of each gene
-# euro = Scraper.new("post-war-european-art")
-# (33..36).each do |i|
-#   data = euro.open_page(i.to_s)
-#   if data[0]
-#     euro.parse_data(data)
+# bau = Scraper.new("bauhaus")
+# (1..6).each do |i|
+#   data = bau.open_page(i.to_s)
+#   if data[1]
+#     bau.parse_data(data[1])
 #   end
 # end
 
