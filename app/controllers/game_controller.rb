@@ -21,7 +21,7 @@ class GameController < ApplicationController
         end
       end
     end
-    @percent = (@score.to_f / @total.to_f) * 100.0
+    @percent = ((@score.to_f / @total.to_f) * 100.0).round(2)
     @artworks = Artwork.where(:category => params[:gene])
   end
 
