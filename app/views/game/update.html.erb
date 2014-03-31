@@ -1,6 +1,7 @@
 
 <div class="wrapper">
-  <p>SCORE: <%= @score %></p>
+  <p>SCORE: <%= @score %>/<%= @total %></p>
+  <p>PERCENTAGE: <%= @percent %>%</p>
   <% @artworks.each do |artwork| %>
     <div class="artwork">
       <img src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/<%= artwork.image_id %>/tall.jpg">
