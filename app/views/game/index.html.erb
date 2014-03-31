@@ -38,8 +38,9 @@
   $(".button").on("mouseover", function() {
     var $this = $(this);
     var image_class = $this.attr("class").split(" ")[1];
-    $(".example_img").find(".visible").removeClass("visible").addClass("hidden").fadeOut();
-    $(".example_img").find("." + image_class).removeClass("hidden").addClass("visible").fadeIn();
+    $image_holder = $(".example_img");
+    $image_holder.find(".visible").removeClass("visible").addClass("hidden");
+    $image_holder.find("." + image_class).removeClass("hidden").addClass("visible");
   });
 
 </script>
