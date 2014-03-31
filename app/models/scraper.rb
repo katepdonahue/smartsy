@@ -36,22 +36,10 @@ class Scraper
     artwork.gallery = data[0]["partner"]["name"]
     artwork.artist_id = artist.id
     artwork.category = self.gene
-    artwork.image_id = self.clean_img(data[0]["images"][0]["id"])
+    artwork.image_id = data[0]["images"][0]["id"]
     artwork.save
     artwork
   end
-
-  def clean_img(image_id)
-    response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{image_id}/tall.jpg")
-    i = 0
-    while response["Error"] || i > 10
-      i += 1
-      response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{image_id}/#{i}/tall.jpg")
-    end
-    "#{image_id}/#{i}"
-  end
-
-
 
 
 end
