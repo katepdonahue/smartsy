@@ -41,5 +41,11 @@ class Scraper
     artwork
   end
 
+  def check_img(art_obj)
+  end
+
+  def fix_img_id(art_obj, index)
+  end
+
 
 end

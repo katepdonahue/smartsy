@@ -44,4 +44,20 @@ describe Scraper do
     end
   end
 
+  describe "#fix_img_id" do
+    it "should add a /index to the image_id" do
+      broken = Artwork.new(:image_id => "515cfbb75eeb1c524c001c29")
+      Scraper.new("bauhaus").fix_img_id(broken, 3)
+      expect(broken.image_id).to eq("515cfbb75eeb1c524c001c29/3")
+    end
+  end
+
+  describe "#check_img" do
+    it "should figure out if the image is broken and find the working index" do
+      broken = Artwork.new(:title => "broken", :image_id => "515cfbb75eeb1c524c001c29")
+      Scraper.new("bauhaus").check_img(broken)
+      expect(broken.image_id).to eq("515cfbb75eeb1c524c001c29/2")
+    end
+  end
+
 end
