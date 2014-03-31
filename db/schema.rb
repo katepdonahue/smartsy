@@ -13,13 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20140329185744) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "artists", force: true do |t|
     t.string "name"
   end
 
   create_table "artworks", force: true do |t|
     t.string  "title"
-    t.integer "year",      limit: 255
+    t.integer "year"
     t.string  "gallery"
     t.integer "artist_id"
     t.string  "category"

@@ -1,0 +1,51 @@
+LOG:  database system was shut down at 2014-03-31 12:31:50 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2014-03-31 12:35:17 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 47335) running in data directory "/usr/local/var/postgres"?
+postgres cannot access the server configuration file "/usr/local/var/pgsql_socket/.s.PGSQL.5432/postgresql.conf": No such file or directory
+FATAL:  database "katedonahue" does not exist
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 47335) running in data directory "/usr/local/var/postgres"?
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2014-03-31 12:46:53 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2014-03-31 12:47:59 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "users" does not exist at character 15
+STATEMENT:  SELECT * FROM users;
+ERROR:  unrecognized configuration parameter "tables"
+STATEMENT:  SHOW Tables;
+ERROR:  database "smartsy_development" already exists
+STATEMENT:  CREATE DATABASE "smartsy_development" ENCODING = 'unicode'
+ERROR:  database "smartsy_development" already exists
+STATEMENT:  CREATE DATABASE "smartsy_development" ENCODING = 'unicode'
+ERROR:  column "year" cannot be cast automatically to type integer
+HINT:  Specify a USING expression to perform the conversion.
+STATEMENT:  ALTER TABLE "artworks" ALTER COLUMN "year" TYPE integer
+FATAL:  database "smartsy_development" does not exist
+ERROR:  column "year" cannot be cast automatically to type integer
+HINT:  Specify a USING expression to perform the conversion.
+STATEMENT:  ALTER TABLE "artworks" ALTER COLUMN "year" TYPE integer
+ERROR:  database "smartsy_development" already exists
+STATEMENT:  CREATE DATABASE "smartsy_development" ENCODING = 'unicode'
+ERROR:  database "smartsy_test" already exists
+STATEMENT:  CREATE DATABASE "smartsy_test" ENCODING = 'unicode'
+ERROR:  database "smartsy_test" already exists
+STATEMENT:  CREATE DATABASE "smartsy_test" ENCODING = 'unicode'
