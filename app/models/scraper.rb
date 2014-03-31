@@ -42,10 +42,20 @@ class Scraper
   end
 
   def check_img(art_obj)
+    response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/tall.jpg")
+    i = 0
+    while response["Error"]
+      i += 1
+      response = HTTParty.get("https://d1ycxz9plii3tb.cloudfront.net/additional_images/#{art_obj.image_id}/#{i}/tall.jpg")
+    end
+    fix_img_id(art_obj, i)
   end
 
   def fix_img_id(art_obj, index)
+    art_obj.image_id = "#{art_obj.image_id}/#{index}"
+    art_obj.save
   end
+
 
 
 end
