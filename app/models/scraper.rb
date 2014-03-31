@@ -14,7 +14,7 @@ class Scraper
     (1..image_cap).each do |i|
       data = open_page(i.to_s)
       if data[0]
-        parse_data(data)
+        parse_data(data[0])
       end
     end
   end
@@ -24,20 +24,20 @@ class Scraper
   end
 
   def parse_data(data)
-    return nil if data[0] == nil || data[0]["artist"] == nil || data[0]["artist"]["name"] == nil
-    artist = Artist.find_by(:name => data[0]["artist"]["name"])
+    return nil if data == nil || data["artist"] == nil || data["artist"]["name"] == nil
+    artist = Artist.find_by(:name => data["artist"]["name"])
     if !artist
       artist = Artist.new
-      artist.name = data[0]["artist"]["name"]
+      artist.name = data["artist"]["name"]
     end
     artist.save
     artwork = Artwork.new
-    artwork.title = data[0]["title"]
-    artwork.year = data[0]["date"].to_i
-    artwork.gallery = data[0]["partner"]["name"] if data[0]["partner"]["name"]
+    artwork.title = data["title"]
+    artwork.year = data["date"].to_i
+    artwork.gallery = data["partner"]["name"] if data["partner"]["name"]
     artwork.artist_id = artist.id
     artwork.category = self.gene
-    artwork.image_id = data[0]["images"][0]["id"]
+    artwork.image_id = data["images"][0]["id"]
     artwork.save
     artwork
   end
