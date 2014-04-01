@@ -1,6 +1,6 @@
 <div class="index-wrapper">
   <nav>
-    <div class="button bauhaus">
+    <div class="button bauhaus selected">
       <a href="/games/bauhaus/play">BAUHAUS</a>
     </div>
     <div class="button art-nouveau">
@@ -23,13 +23,13 @@
     </div>
   </nav>
   <div class="example_img">
-    <img class="bauhaus visible" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/504e6558c2fea000020008b2/large.jpg">
-    <img class="art-nouveau hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/515d115c769659e1fb002926/2/large.jpg">
-    <img class="post-war-american-art hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/52cc916c275b2489e7000182/large.jpg">
-    <img class="post-war-european-art hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/4fe1e0da226ad30001002399/large.jpg">
-    <img class="renaissance hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/520d36389c18db52b9000669/large.jpg">
-    <img class="minimalism hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/5301f514a09a67e3de00025c/large.jpg">
-    <img class="impressionism hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/515bb200ea092ff579000ea0/3/large.jpg">
+    <a href="/games/bauhaus/play"><img class="bauhaus visible" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/504e6558c2fea000020008b2/large.jpg"></a>
+    <a href="/games/art-nouveau/play"><img class="art-nouveau hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/515d115c769659e1fb002926/2/large.jpg"></a>
+    <a href="/games/post-war-american-art/play"><img class="post-war-american-art hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/52cc916c275b2489e7000182/large.jpg"></a>
+    <a href="/games/post-war-european-art/play"><img class="post-war-european-art hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/4fe1e0da226ad30001002399/large.jpg"></a>
+    <a href="/games/renaissance/play"><img class="renaissance hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/520d36389c18db52b9000669/large.jpg"></a>
+    <a href="/games/minimalism/play"><img class="minimalism hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/5301f514a09a67e3de00025c/large.jpg"></a>
+    <a href="games/impressionism/play"><img class="impressionism hidden" src="https://d1ycxz9plii3tb.cloudfront.net/additional_images/515bb200ea092ff579000ea0/3/large.jpg"></a>
 
     
   </div>
@@ -37,7 +37,10 @@
 <script type="text/javascript">
   $(".button").on("mouseover", function() {
     var $this = $(this);
+    var $not_this = $(".button").not($this);
     var image_class = $this.attr("class").split(" ")[1];
+    $this.addClass("selected");
+    $not_this.removeClass("selected");
     $image_holder = $(".example_img");
     $image_holder.find(".visible").removeClass("visible").addClass("hidden");
     $image_holder.find("." + image_class).removeClass("hidden").addClass("visible");
