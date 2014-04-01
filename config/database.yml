@@ -29,7 +29,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: smartsy_test
+  database: smartsy_production
   pool: 5
   user: katedonahue
   password:

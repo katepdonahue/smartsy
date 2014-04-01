@@ -49,3 +49,10 @@ ERROR:  database "smartsy_test" already exists
 STATEMENT:  CREATE DATABASE "smartsy_test" ENCODING = 'unicode'
 ERROR:  database "smartsy_test" already exists
 STATEMENT:  CREATE DATABASE "smartsy_test" ENCODING = 'unicode'
+FATAL:  database "traveling_salesman_development" does not exist
+FATAL:  database "traveling_salesman_test" does not exist
+FATAL:  database "traveling_salesman_production" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
