@@ -1,4 +1,3 @@
-require 'httparty'
 
 class Scraper
   attr_reader :gene, :api, :image_cap
