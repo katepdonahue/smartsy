@@ -30,14 +30,5 @@ broken1.save
 broken2 = Artwork.find_by(:image_id => "515b122c9562c86fb8000818/6")
 broken2.delete
 
-# if images don't get filled and you need to add more per category
-# run the following for however many you need of each gene
-# bau = Scraper.new("bauhaus")
-# (1..6).each do |i|
-#   data = bau.open_page(i.to_s)
-#   if data[1]
-#     bau.parse_data(data[1])
-#   end
-# end
 
 

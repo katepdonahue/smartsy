@@ -6,7 +6,7 @@ describe Scraper do
     bauhaus_scraper = Scraper.new("bauhaus")
     bauhaus_scraper.grab_pages
     it "should grab all the photos and save them in the database" do
-      expect(Artwork.find_by(:title => "Study for Homage to the square: Absorption")).not_to be_nil
+      expect(Artwork.where(:category => "bauhaus").length).to be > 0
     end
     it "should not create duplicate artists in the database" do
       expect(Artist.where(:name => "Josef Albers").length).to eq(1)
@@ -23,31 +23,28 @@ describe Scraper do
   describe "#parse_data" do
     bauhaus_scraper = Scraper.new("bauhaus")
     data = bauhaus_scraper.open_page("1")
-    artwork = bauhaus_scraper.parse_data(data)
-    it "should save the correct artist_id for the artwork object" do
-      expect(artwork.artist_id).to eq(1)
-    end
-    it "should save the correct title for the artwork object" do
-      expect(artwork.title).to eq("Study for Homage to the square: Absorption")
-    end
-    it "should save the correct year for the artwork object" do
-      expect(artwork.year).to eq(1967)
-    end
-    it "should save the correct gallery for the artwork object" do
-      expect(artwork.gallery).to eq("Vedovi Gallery")
-    end
-    it "should save the correct category for the artwork object" do
-      expect(artwork.category).to eq("bauhaus")
-    end
-    it "should save the correct image_id for the artwork object" do
-      expect(artwork.image_id).to eq("5331ae928b3b81a6b5000009")
+    artwork = bauhaus_scraper.parse_data(data[0])
+    it "should save the artist_id for the artwork object" do
+      expect(Artwork.find(1).artist_id).to eq(1)
     end
   end
 
   describe "#clean_img" do
     it "should figure out if the image is broken and find the working index" do
-      clean = Scraper.new("bauhaus").clean_img("515cfbb75eeb1c524c001c29")
+      Scraper.new("bauhaus")
+      clean = Artwork.clean_img("515cfbb75eeb1c524c001c29")
       expect(clean).to eq("515cfbb75eeb1c524c001c29/2")
+    end
+  end
+
+  describe "#get_extra_images" do
+    it "should grab the given number of artwork objects and add them to the database" do
+      bau = Scraper.new("bauhaus")
+      bau.grab_pages
+      bau_num1 = Artwork.where(:category => "bauhaus").length
+      bau.get_extra_images(6)
+      bau_num2 = Artwork.where(:category => "bauhaus").length
+      expect(bau_num2 - bau_num1).to eq(6)
     end
   end
 

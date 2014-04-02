@@ -1,3 +1,4 @@
+require 'httparty'
 
 class Scraper
   attr_reader :gene, :api, :image_cap
@@ -39,6 +40,10 @@ class Scraper
     artwork.image_id = data["images"][0]["id"]
     artwork.save
     artwork
+  end
+
+  def get_extra_images(img_quant)
+
   end
 
 
