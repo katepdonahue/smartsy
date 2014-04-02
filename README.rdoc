@@ -7,7 +7,6 @@ Written in Ruby 2.0.0p247 and Rails 4.0.2.
 To get it working locally, clone the repo then run rake db:migrate and rake db:seed. The seeds could take awhile because data is being scraped somewhat illegally from Artsy's api.
 
 I found that there were a few missing images for some of the genres because either the hits to the api went beyond the number of pages available for the genre, or an image was missing on the site. To grab extra images for a genre check the seeds file for the correctly formatted genre name, then run this in rails c:
-
 my_scraper = Scraper.new("genre-name")
 my_scraper.get_extra_images(number_of_images_you_want)
 
