@@ -1,5 +1,9 @@
 # Smartsy
 
+Smartsy is a game which displays artworks with their titles and allows users to guess the artist. 
+
+It's written in Ruby 2.0.0p247 and Rails 4.0.2.
+
 You can find the deployed app <a href="http://smartsy.herokuapp.com/">here</a>.
 
 Here's the home page:
@@ -19,9 +23,7 @@ Here's the Post War American Art page after submitting results
 ![Smartsy](/public/smartsy_results.png)
 
 
-Smartsy is a game which displays artworks with their titles and allows users to guess the artist. 
 
-It's written in Ruby 2.0.0p247 and Rails 4.0.2.
 
 ## Installation
 
