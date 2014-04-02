@@ -4,19 +4,19 @@ You can find the deployed app <a href="http://smartsy.herokuapp.com/">here</a>.
 
 Here's the home page:
 
-<img src="/public/smartsy_home.png" alt="Drawing" style="width: 200px;"/>
+![Smartsy](/public/smartsy_home.png)
 
 First choose a genre.
 
 Here's the Bauhaus page. 
 
-<img src="/public/smartsy_play.png" alt="Drawing" style="width: 100px;"/>
+![Smartsy](/public/smartsy_play.png)
 
 Next fill in the empty Artist fields and submit the results.
 
 Here's the Post War American Art page after submitting results
 
-<img src="/public/smartsy_results.png" alt="Drawing" style="width: 200px;"/>
+![Smartsy](/public/smartsy_results.png)
 
 
 Smartsy is a game which displays artworks with their titles and allows users to guess the artist. 
