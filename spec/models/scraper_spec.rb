@@ -31,9 +31,9 @@ describe Scraper do
 
   describe "#clean_img" do
     it "should figure out if the image is broken and find the working index" do
-      Scraper.new("bauhaus")
-      clean = Artwork.clean_img("515cfbb75eeb1c524c001c29")
-      expect(clean).to eq("515cfbb75eeb1c524c001c29/2")
+      broken = Artwork.new(:image_id => "515cfbb75eeb1c524c001c29")
+      broken.clean_img
+      expect(broken.image_id).to eq("515cfbb75eeb1c524c001c29/2")
     end
   end
 
