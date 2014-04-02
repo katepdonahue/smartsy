@@ -43,7 +43,12 @@ class Scraper
   end
 
   def get_extra_images(img_quant)
-
+    (1..img_quant).each do |i|
+      data = self.open_page(i.to_s)
+      if data[1]
+        self.parse_data(data[1])
+      end
+    end
   end
 
 
