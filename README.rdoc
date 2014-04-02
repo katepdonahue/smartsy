@@ -8,12 +8,11 @@ To get it working locally, clone the repo then run rake db:migrate and rake db:s
 
 I found that there were a few missing images for some of the genres because either the hits to the api went beyond the number of pages available for the genre, or an image was missing on the site. To grab extra images for a genre check the seeds file for the correctly formatted genre name, then run this in rails c:
 
-my_scraper = Scraper.new("genre-name")\n
+my_scraper = Scraper.new("genre-name")
 my_scraper.get_extra_images(number_of_images_you_want)
 
 Example:
-
-my_scraper = Scraper.new("bauhaus")\n
+my_scraper = Scraper.new("bauhaus")
 my_scraper.get_extra_images(6)
 
 This would add data for 6 more Artwork objects with the genre "bauhaus" to the database.
