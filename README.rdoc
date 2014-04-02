@@ -1,19 +1,73 @@
-== SMARTSY
+# Smartsy
+
+
+
+![Smartsy](https://i.chzbgr.com/maxW500/8125787136/h560003D2/)
 
 Smartsy is a game which displays artworks with their titles and allows users to guess the artist. 
 
-Written in Ruby 2.0.0p247 and Rails 4.0.2.
+It's written in Ruby 2.0.0p247 and Rails 4.0.2.
 
-To get it working locally, clone the repo then run rake db:migrate and rake db:seed. The seeds could take awhile because data is being scraped somewhat illegally from Artsy's api.
+## Installation
 
-I found that there were a few missing images for some of the genres because either the hits to the api went beyond the number of pages available for the genre, or an image was missing on the site. To grab extra images for a genre check the seeds file for the correctly formatted genre name, then run this in rails c:
-my_scraper = Scraper.new("genre-name")
-my_scraper.get_extra_images(number_of_images_you_want)
+To get it running locally and play around with the code yourself:
 
-Example:
-my_scraper = Scraper.new("bauhaus")
-my_scraper.get_extra_images(6)
+Clone the repo
 
+```ruby
+git clone "https://github.com/katepdonahue/smartsy.git"
+```
+
+Bundle the Gemfile
+
+```ruby
+bundle install
+```
+
+Run the migrations
+
+```ruby
+rake db:migrate
+```
+
+Run the seeds
+```ruby
+rake db:seed
+```
+
+The seeds could take awhile because data is being scraped somewhat illegally from Artsy's api.
+
+## Setup
+
+I found that there were a few missing images for some of the genres because either the hits to the api went beyond the number of pages available for the genre, or an image was missing on the site. To grab extra images for a genre check the seeds file for the correctly formatted genre name, and run the following:
+
+```ruby
+rails c
+
+  >> my_scraper = Scraper.new("genre-name")
+  >> my_scraper.get_extra_images(number_of_images_you_want)
+
+```
+
+For example:
+
+```ruby
+rails c
+
+  >> my_scraper = Scraper.new("bauhaus")
+  >> my_scraper.get_extra_images(6)
+
+```
 This would add data for 6 more Artwork objects with the genre "bauhaus" to the database.
 
-You can run the test suite by running rake spec. Currently there are unit tests and pending cucumber tests which I plan on coming back to.
+
+
+## Testing
+
+You can run the test suite by running:
+
+```ruby
+rake spec
+```
+
+Currently there are unit tests for the scraper and pending cucumber tests. I plan on writing unit tests for the artwork and game classes as well as completing the cucumber tests in the future.
