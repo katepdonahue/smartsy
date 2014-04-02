@@ -4,7 +4,7 @@ Smartsy is a game which displays artworks with their titles and allows users to 
 
 It's written in Ruby 2.0.0p247 and Rails 4.0.2.
 
-You can find the deployed app <a href="http://smartsy.herokuapp.com/">here</a>.
+You can find the deployed app <a href="http://smartsy.herokuapp.com/" target="_blank">here</a>.
 
 Here's the home page:
 
