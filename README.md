@@ -10,7 +10,7 @@ First choose a genre.
 
 Here's the Bauhaus page. 
 
-<img src="/public/smartsy_play.png" alt="Drawing" style="width: 200px;"/>
+<img src="/public/smartsy_play.png" alt="Drawing" style="width: 100px;"/>
 
 Next fill in the empty Artist fields and submit the results.
 
