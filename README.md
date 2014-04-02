@@ -6,17 +6,17 @@ It's written in Ruby 2.0.0p247 and Rails 4.0.2.
 
 You can find the deployed app <a href="http://smartsy.herokuapp.com/" target="_blank">here</a>.
 
-Here's the home page:
+Here's what the home page looks like:
 
 ![Smartsy](/public/smartsy_home.png)
 
-First choose a genre.
+Choosing a genre takes you to the game page.
 
-Here's the Bauhaus page. 
+Here's the Bauhaus game page. 
 
 ![Smartsy](/public/smartsy_play.png)
 
-Next fill in the empty Artist fields and submit the results.
+Next fill in the empty artist name fields and submit the results.
 
 Here's the Post War American Art page after submitting results
 
@@ -56,7 +56,7 @@ The seeds could take awhile because data is being grabbed somewhat illegally fro
 
 ## Setup
 
-I found that there were a few missing images for some of the genres because either the hits to the api went beyond the number of pages available for the genre, or an image was missing on the site. To grab extra images for a genre check the seeds file for the correctly formatted genre name, and run the following:
+I found that there were a few missing images for some of the genres because either the hits to the api went beyond the number of pages available for the genre, or an image was missing on the site. To grab extra images for a genre, check the seeds file for the correctly formatted genre name and run the following:
 
 ```ruby
 rails c
