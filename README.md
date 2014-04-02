@@ -2,7 +2,7 @@
 
 
 
-![Smartsy](https://i.chzbgr.com/maxW500/8125787136/h560003D2/)
+![Smartsy](/public/smartsy_home.png)
 
 Smartsy is a game which displays artworks with their titles and allows users to guess the artist. 
 
@@ -35,7 +35,7 @@ Run the seeds
 rake db:seed
 ```
 
-The seeds could take awhile because data is being scraped somewhat illegally from Artsy's api.
+The seeds could take awhile because data is being grabbed somewhat illegally from Artsy's api.
 
 ## Setup
 
